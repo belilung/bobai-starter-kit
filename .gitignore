@@ -1,0 +1,11 @@
+# Secrets - never commit
+.env
+
+# Generated output (keep the folder, ignore its contents)
+outputs/*
+!outputs/.gitkeep
+
+# Python / OS noise
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,10 @@
+{
+  "project": "bobai-starter-kit",
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(python3 tools/post_to_linkedin.py:*)"
+    ]
+  }
+}
