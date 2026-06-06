@@ -3,9 +3,19 @@
 Ten ready-to-run prompts. Copy any prompt into Claude Code and go. They build on
 each other, so working top to bottom is the fastest way to learn the kit.
 
-Setup reminder: research works out of the box. For the voice prompts, fill in
-your samples in `.claude/skills/voice/SKILL.md` first. For publishing, set your
-`LINKEDIN_TOKEN` in `.env` (see README section 4).
+## Before you start: the skills are empty on purpose
+
+This kit ships with **no active skills**. The point is to build them yourself - the
+prompts below help you do exactly that. Two ways to use this:
+
+- **Build your own** (recommended): the prompts coach you to write each skill from
+  scratch in `.claude/skills/`. That's where the real learning is.
+- **Unpack the ready ones** (shortcut): unzip `unpack-if-you-want/skills.zip` into
+  `.claude/skills/`, and `/research`, `/voice`, `/content-agent` work instantly.
+  Use them, then read them to see how they're built.
+
+For the voice prompts, fill in your own samples in `.claude/skills/voice/SKILL.md`.
+For publishing, set your `LINKEDIN_TOKEN` in `.env` (see README section 4).
 
 ---
 

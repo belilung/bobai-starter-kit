@@ -1,17 +1,29 @@
 # BobAI Starter Kit
 
-A ready-to-run Claude Code project. It comes with three skills - **research**,
-**voice**, and **content-agent** - so you can go from "I have a topic" to a
-published LinkedIn post, all by talking to Claude.
+A Claude Code project for learning to build your own **skills** - small folders of
+plain-language instructions that turn into slash commands like `/research`.
 
-Start with **`docs/BobAI-10-Use-Cases.pdf`** - 10 prompts you can copy straight
-into the chat.
+**This kit ships with no active skills, on purpose.** The goal is for *you* to
+build them. Three finished reference skills (**research**, **voice**,
+**content-agent**) are zipped up in `unpack-if-you-want/` - a safety net you only
+open if you get stuck.
 
-> **"I don't see the skills in Finder!"** That's normal. The skills live in a
-> folder called `.claude` that starts with a dot, and macOS Finder hides
-> dot-folders. They are still there, and **Claude Code reads them automatically**.
-> To see the folder in Finder, press **Cmd + Shift + .** (period). You don't have
-> to - just open this folder in Claude Code and the skills work.
+Start with **`docs/BobAI-10-Use-Cases.pdf`** - 10 prompts that walk you through it.
+
+---
+
+## How it works
+
+1. **Build your own skill.** Ask Claude Code to create one (the 10 Use Cases show
+   you how). A skill is just `.claude/skills/<name>/SKILL.md`. See
+   `.claude/skills/START-HERE.md`.
+2. **Stuck? Unpack the ready-made ones.** Unzip `unpack-if-you-want/skills.zip`
+   into `.claude/skills/` and `/research`, `/voice`, `/content-agent` work
+   instantly. Read them to see how a good skill is written, then make them yours.
+
+> **"I don't see anything in Finder!"** The skills folder is `.claude`, which
+> starts with a dot - macOS Finder hides dot-folders. Press **Cmd + Shift + .**
+> (period) to reveal it. Claude Code reads it either way.
 
 ---
 
@@ -29,14 +41,16 @@ No `pip install` needed. The LinkedIn tool uses only the Python standard library
 2. Open the folder in Claude Code (`cd` into it, run `claude`).
 3. Open `docs/BobAI-10-Use-Cases.pdf` and copy **Use Case #1** into the chat.
 
-That first one (research) works immediately - no setup. Voice and publishing need
-the two short steps below.
+Use Case #1 has you build your first skill from scratch. Prefer the shortcut?
+Unzip `unpack-if-you-want/skills.zip` into `.claude/skills/` and the finished
+skills are live.
 
 ## 3. Set up your voice (2 minutes)
 
-Open `.claude/skills/voice/SKILL.md`. It ships empty on purpose. Paste 3-5 of your
-own posts into the `## Voice samples` section, replacing the placeholders. That's
-how Claude learns to write like you. Save the file.
+The voice skill ships empty on purpose - it needs *your* writing. Whether you
+built your own or unpacked the ready one, open `.claude/skills/voice/SKILL.md`,
+paste 3-5 of your own posts into the `## Voice samples` section, and save. That's
+how Claude learns to write like you.
 
 ## 4. Set up LinkedIn publishing (required to post)
 
@@ -69,11 +83,17 @@ python3 tools/post_to_linkedin.py
 
 ## 5. Using the skills
 
+Once a skill exists in `.claude/skills/` (built by you, or unpacked), it's a slash
+command:
+
 | Command | What it does | Example |
 |---|---|---|
 | `/research` | Web research with sources, saved to `outputs/` | `/research the latest AI tools for solo founders` |
 | `/voice` | Write something in your style | `/voice a short LinkedIn post about shipping my first project` |
 | `/content-agent` | Research -> draft -> you review -> publish | `/content-agent write a post about AI lead-gen for founders` |
+
+Don't see them? You haven't built or unpacked any skills yet - see "How it works"
+at the top.
 
 ## 6. Safety notes
 
@@ -85,12 +105,13 @@ python3 tools/post_to_linkedin.py
 ## Folder map
 
 ```
-.claude/skills/   the three skills (research, voice, content-agent)  [hidden in Finder]
-tools/            post_to_linkedin.py (the only thing that posts)
-outputs/          research notes and drafts land here
-docs/             the 10 Use Cases (PDF + markdown)
-CLAUDE.md         how Claude should behave in this project
-.env.example      copy to .env and add your token                    [hidden in Finder]
+.claude/skills/        where YOUR skills live (starts empty + START-HERE.md)  [hidden in Finder]
+unpack-if-you-want/     skills.zip - the 3 finished skills, as a fallback
+tools/                  post_to_linkedin.py (the only thing that posts)
+outputs/                research notes and drafts land here
+docs/                   the 10 Use Cases (PDF + markdown)
+CLAUDE.md               how Claude should behave in this project
+.env.example            copy to .env and add your token                       [hidden in Finder]
 ```
 
 Folders that start with a dot (`.claude`, `.env.example`, `.gitignore`) are hidden

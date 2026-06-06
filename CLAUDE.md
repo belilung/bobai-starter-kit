@@ -21,13 +21,24 @@ fast. Offloading the exact steps to scripts keeps things consistent.
 
 ## What's in here
 
-- **`/research`** - search the web and write a sourced summary to `outputs/`.
-- **`/voice`** - write a post in your personal style. Fill in your own samples
-  first (see `.claude/skills/voice/SKILL.md`).
-- **`/content-agent`** - the full pipeline: research -> draft in your voice ->
-  you review -> publish to LinkedIn.
+**The kit ships with no active skills - that is intentional.** The goal is for the
+student to *build their own* skills with you. Help them do that.
+
+- **`.claude/skills/`** - empty, with a `START-HERE.md` guide. New skills the
+  student writes (a folder + a `SKILL.md`) become slash commands here.
+- **`unpack-if-you-want/skills.zip`** - three finished reference skills
+  (**research**, **voice**, **content-agent**). Only unpack these into
+  `.claude/skills/` if the student is stuck or wants a reference.
 - **`tools/post_to_linkedin.py`** - the only thing that talks to LinkedIn.
 - **`outputs/`** - where research notes and drafts are saved.
+
+## How to help the student
+
+1. **Default to coaching them to build their own skill**, not handing them the
+   finished one. If they ask "how do I research a topic," help them author a
+   `research` skill in `.claude/skills/` - don't just unpack mine.
+2. **Only unpack `unpack-if-you-want/skills.zip` when they ask** (e.g. "I'm stuck,
+   just give me the ready ones"). Then unzip it into `.claude/skills/`.
 
 ## Ground rules
 
